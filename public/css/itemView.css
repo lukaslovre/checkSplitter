@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+h1 {
+  color: #2e2e2e;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0rem 3rem 0rem;
+}
+p {
+  color: #2e2e2e;
+  font-size: 1rem;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+}
+
+.naslov {
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.podnaslov {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.slikaIopis {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.slikaDiv {
+  width: 45%;
+}
+#racun {
+  margin-top: 1rem;
+  width: 90%;
+  border-radius: 0.25rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.opisDiv {
+  width: 45%;
+}
+#tekstOpisa {
+  margin-top: 1rem;
+}
+
+.osobaStanje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.placanje input {
+  width: 3.5rem;
+  text-align: center;
+  padding: 0.25em 0.5em;
+  font-weight: 500;
+  color: #000;
+}
+.novciDiv {
+  display: flex;
+  align-items: center;
+}
+.od {
+  font-size: 0.75rem;
+  margin: 0 0.5rem;
+}
+.icon {
+  margin-left: 1.25rem;
+  height: 1.75rem;
+}

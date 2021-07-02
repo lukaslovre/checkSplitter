@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+h1 {
+  color: #2e2e2e;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0rem 4rem 0rem;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  color: #2e2e2e;
+  font-size: 1.25rem;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+button {
+  display: block;
+
+  background-color: transparent;
+  border: #ff867c 2px solid;
+  border-radius: 0.5rem;
+  padding: 0.25em 0.5em;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ff867c;
+  margin-left: auto;
+  margin-bottom: 3rem;
+
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff867c;
+  color: #fbfbfb;
+}
+
+.ListDivItem {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.ListDivItem:hover {
+  background-color: #eeeeee;
+}

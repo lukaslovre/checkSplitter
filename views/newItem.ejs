@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/newItem.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Check Splitter</title>
+  </head>
+  <body>
+    <a href="/"> <h1>Lista kupovina</h1></a>
+    <main>
+      <form
+        action="/newItem"
+        method="post"
+        autocomplete="off"
+        spellcheck="false"
+        enctype="multipart/form-data"
+      >
+        <label for="title">Naslov</label>
+        <input type="text" name="title" id="title" required />
+        <label for="date">Datum</label>
+        <input type="text" name="date" id="date" required />
+        <label for="notes">Bilješke</label>
+        <input type="text" name="notes" id="notes" />
+        <div class="memberInputDiv">
+          <p>Tko je sudjelovao</p>
+          <input type="checkbox" name="members" id="member1" value="Filip" />
+          <label for="member1">Filip</label>
+          <br />
+          <input type="checkbox" name="members" id="member2" value="Ivan" />
+          <label for="member2">Ivan</label>
+          <br />
+          <input type="checkbox" name="members" id="member3" value="Lukas" />
+          <label for="member3">Lukas</label>
+          <br />
+          <input type="checkbox" name="members" id="member4" value="Mislav" />
+          <label for="member4">Mislav</label>
+          <br />
+          <input type="checkbox" name="members" id="member5" value="Noa" />
+          <label for="member5">Noa</label>
+        </div>
+        <label for="img">Slika računa</label>
+        <input type="file" id="img" name="img" accept="image/*" />
+        <input type="submit" value="Create" />
+      </form>
+    </main>
+  </body>
+</html>

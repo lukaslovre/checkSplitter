@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/itemView.css" />
+    <script src="/js/itemView.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Check Splitter</title>
+  </head>
+  <body>
+    <a href="/"> <h1>Lista kupovina</h1></a>
+    <main>
+      <% if(locals.item){ %>
+      <p class="naslov"><%= item.title %>, <%= item.date %></p>
+      <div class="slikaIopis">
+        <div class="slikaDiv">
+          <p class="podnaslov">čunRa</p>
+          <hr />
+          <a href="/uploads/<%= item.img %>">
+            <img src="/uploads/<%= item.img %>" alt="racun" id="racun"
+          /></a>
+        </div>
+        <div class="opisDiv">
+          <p class="podnaslov">Opis</p>
+          <hr />
+          <p id="tekstOpisa"><%= item.notes %></p>
+        </div>
+      </div>
+      <div class="placanje">
+        <% if(Array.isArray(item.members)){ %> <%
+          for(let i=0;i<item.members.length;i++){%>
+          <!--  item.members.forEach(member=>{%> -->
+       
+        <div class="osobaStanje">
+          <p><%= item.members[i] %></p>
+          <div class="novciDiv">
+            <input type="text" name="moneyGiven" class="moneyGiven" value="<%= item.given[i] %>"/>
+            <p class="od">od</p>
+            <input type="text" name="moneyNeeded" class="moneyNeeded" />
+            <img src="/declineIcon.svg" alt="check" class="icon" />
+          </div>
+        </div>
+        <% } %> <% } else{ %>
+        <div class="osobaStanje">
+          <p><%= item.members %></p>
+          <div class="novciDiv">
+            <input
+              type="text"
+              name="moneyGiven"
+              class="moneyGiven"
+              value="<%= item.given %>"
+            />
+            <p class="od">od</p>
+            <input type="text" name="moneyNeeded" class="moneyNeeded" />
+            <img src="/declineIcon.svg" alt="check" class="icon" />
+          </div>
+        </div>
+      </div>
+      <% } %> <% } %>
+    </main>
+  </body>
+</html>
