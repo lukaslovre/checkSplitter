@@ -90,3 +90,22 @@ main {
   margin-left: 1.25rem;
   height: 1.75rem;
 }
+
+button {
+  margin: 4rem auto 0rem auto;
+  display: block;
+  padding: 0.25em 0.5em;
+
+  background-color: transparent;
+  border: #ff867c 2px solid;
+  border-radius: 0.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ff867c;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff867c;
+  color: #fbfbfb;
+}

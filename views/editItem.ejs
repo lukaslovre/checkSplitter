@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/newItem.css" />
-    <script src="/js/newItem.js" defer></script>
+    <script src="/js/editItem.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,40 +21,50 @@
   <body>
     <a href="/"> <h1>Lista kupovina</h1></a>
     <main>
+      <% if(locals.item){ %>
       <form
-        action="/newItem"
+        action="/editItem"
         method="post"
         autocomplete="off"
         spellcheck="false"
         enctype="multipart/form-data"
       >
+        <input
+          type="text"
+          name="id"
+          id="id"
+          value="<%= item._id %>"
+          style="display: none"
+        />
         <label for="title">Naslov</label>
-        <input type="text" name="title" id="title" required />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          value="<%= item.title %>"
+          required
+        />
         <label for="date">Datum</label>
-        <input type="text" name="date" id="date" required />
+        <input
+          type="text"
+          name="date"
+          id="date"
+          value="<%= item.date %>"
+          required
+        />
         <label for="notes">Bilješke</label>
-        <input type="text" name="notes" id="notes" />
+        <input type="text" name="notes" id="notes" value="<%= item.notes %>" />
         <div class="memberInputDiv">
           <p>Tko je sudjelovao</p>
-          <input type="checkbox" name="members" id="member1" value="Filip" />
-          <label for="member1">Filip</label>
+          <% for(let i=0; i<item.members.length;i++){%>
+          <input type="checkbox" name="members" id="member<%= i+1%>" value="<%= item.members[i]%>" checked disabled/>
+          <label for="member<%= i+1%>"><%= item.members[i]%></label>
           <br />
-          <input type="checkbox" name="members" id="member2" value="Ivan" />
-          <label for="member2">Ivan</label>
-          <br />
-          <input type="checkbox" name="members" id="member3" value="Lukas" />
-          <label for="member3">Lukas</label>
-          <br />
-          <input type="checkbox" name="members" id="member4" value="Mislav" />
-          <label for="member4">Mislav</label>
-          <br />
-          <input type="checkbox" name="members" id="member5" value="Noa" />
-          <label for="member5">Noa</label>
-          <br />
+          <% } %>
           <input
             type="checkbox"
             name="members"
-            id="member6"
+            id="member<%= item.members.length+1%>"
             value=""
             class="customMember"
           />
@@ -62,8 +72,9 @@
         </div>
         <label for="img">Slika računa</label>
         <input type="file" id="img" name="img" accept="image/*" />
-        <input type="submit" value="Create" />
+        <input type="submit" value="Edit" />
       </form>
+      <% } %>
     </main>
   </body>
 </html>

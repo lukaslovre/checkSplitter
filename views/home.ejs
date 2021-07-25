@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/home.css" />
+    <script src="/js/home.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +25,11 @@
       <hr />
       <div class="itemListDiv">
         <% if(locals.titles){ %> <% titles.forEach(title=>{%>
-        <div class="ListDivItem"onclick="window.location = '/item/<%= title.title %>'"" >
+        <div
+          class="ListDivItem"
+          onclick="window.location = '/item/<%= title._id %>'"
+          id="<%= title._id %>"
+        >
           <p><%= title.title %></p>
           <p><%= title.date %></p>
         </div>

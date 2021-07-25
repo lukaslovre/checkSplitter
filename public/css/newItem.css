@@ -70,6 +70,14 @@ input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
 }
+.checkboxTextInput {
+  color: #666;
+  padding: 0.25em 0.5em;
+  font-size: 0.875rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0;
+  box-shadow: none;
+}
 
 .memberInputDiv {
   margin-bottom: 2rem;

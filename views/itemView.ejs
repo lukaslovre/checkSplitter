@@ -25,7 +25,7 @@
       <p class="naslov"><%= item.title %>, <%= item.date %></p>
       <div class="slikaIopis">
         <div class="slikaDiv">
-          <p class="podnaslov">čunRa</p>
+          <p class="podnaslov">Račun</p>
           <hr />
           <a href="/uploads/<%= item.img %>">
             <img src="/uploads/<%= item.img %>" alt="racun" id="racun"
@@ -47,7 +47,7 @@
           <div class="novciDiv">
             <input type="text" name="moneyGiven" class="moneyGiven" value="<%= item.given[i] %>"/>
             <p class="od">od</p>
-            <input type="text" name="moneyNeeded" class="moneyNeeded" />
+            <input type="text" name="moneyNeeded" class="moneyNeeded" value="<%= item.needed[i] %>"/>
             <img src="/declineIcon.svg" alt="check" class="icon" />
           </div>
         </div>
@@ -62,12 +62,14 @@
               value="<%= item.given %>"
             />
             <p class="od">od</p>
-            <input type="text" name="moneyNeeded" class="moneyNeeded" />
+            <input type="text" name="moneyNeeded" class="moneyNeeded" value="<%= item.needed[i] %>"/>
             <img src="/declineIcon.svg" alt="check" class="icon" />
           </div>
         </div>
       </div>
-      <% } %> <% } %>
+      <% } %> 
+      <button onclick="window.location = '/edit/<%= item._id %>'">EDIT</button>
+      <% } %>
     </main>
   </body>
 </html>
